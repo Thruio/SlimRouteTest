@@ -6,6 +6,7 @@
  * Time: 00:21
  */
 
+namespace Thru\SlimRouteTest;
 use Slim\Slim;
 class SlimRouteTestCase extends PHPUnit_Framework_TestCase {
 
