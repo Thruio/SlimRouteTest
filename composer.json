@@ -9,7 +9,7 @@
     ],
     "require": {
         "phpunit/phpunit": "4.*",
-        "shark/simple_html_dom": "dev-master"
+        "shark/simple_html_dom": "dev-master@dev"
     },
     "autoload"   : {
         "psr-0": {
