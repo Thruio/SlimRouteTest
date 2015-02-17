@@ -65,4 +65,9 @@ class SlimRouteTestCase extends \PHPUnit_Framework_TestCase {
 
     return $response;
   }
+
+  protected function callSlimRouteAsDomDocument(Slim $app, $method = 'GET', $route_to_call, $data = null){
+    $html = $this->callSlimRoute($app, $method, $route_to_call, $data);
+    simple_
+  }
 }
