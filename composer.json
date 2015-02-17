@@ -1,5 +1,5 @@
 {
-    "name": "thruio/slim-route-test",
+    "name": "thru.io/slim-route-test",
     "description": "Test slim routes with ease, without needing a web server",
     "authors": [
         {
