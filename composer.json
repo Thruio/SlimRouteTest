@@ -1,0 +1,11 @@
+{
+    "name": "thruio/slim-route-test",
+    "description": "Test slim routes with ease, without needing a web server",
+    "authors": [
+        {
+            "name": "Matthew Baggett",
+            "email": "matthew@baggett.me"
+        }
+    ],
+    "require": {}
+}
