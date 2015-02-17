@@ -24,7 +24,7 @@ class SlimRouteTestCase extends \PHPUnit_Framework_TestCase {
    *
    * @return \StdClass
    */
-  protected function callSlimRoute(Slim $app, $method = 'GET', $route_to_call, $data = null){
+  protected function _callSlimRoute(Slim $app, $method = 'GET', $route_to_call, $data = null){
 
     $start = microtime(true);
     $response = new \StdClass();
@@ -53,21 +53,36 @@ class SlimRouteTestCase extends \PHPUnit_Framework_TestCase {
       }
     }
 
+    ob_start();
     $matched_route->dispatch();
-    $response->body = $app->response()->getBody();
-    $headers = $app->response()->headers();
-    $response->content_type = isset($headers['data']['Content-Type']) ? $headers['data']['Content-Type'] : null;
+    $response->body = ob_get_contents();
+    ob_end_clean();
+
     $end = microtime(true);
 
     $response->time_to_complete = $end - $start;
 
-    unset($app);
+    $this->assertEquals(true, true);
 
     return $response;
   }
 
-  protected function callSlimRouteAsDomDocument(Slim $app, $method = 'GET', $route_to_call, $data = null){
-    $html = $this->callSlimRoute($app, $method, $route_to_call, $data);
-    simple_
+  /**
+   * @param Slim $app Slim context
+   * @param string $method Method of Request to emulate. POST/GET/etc
+   * @param string $route_to_call Name of the Route you wish to call
+   * @param null $data optional array of POST data.
+   *
+   * @var $app \Slim\Slim
+   * @var $matched_route \Slim\Route
+   * @var $context_app \Slim\Slim
+   *
+   * @throws \Exception
+   *
+   * @return bool|\simple_html_dom
+   */
+  protected function _callSlimRouteAsDomDocument(Slim $app, $method = 'GET', $route_to_call, $data = null){
+    $return = $this->_callSlimRoute($app, $method, $route_to_call, $data);
+    return str_get_html($return->body);
   }
 }
