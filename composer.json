@@ -7,7 +7,7 @@
             "email": "matthew@baggett.me"
         }
     ],
-    "require-dev": {
+    "require": {
         "phpunit/phpunit": "4.*",
         "shark/simple_html_dom": "dev-master"
     },
