@@ -8,7 +8,7 @@
 
 namespace Thru\SlimRouteTest;
 use Slim\Slim;
-class SlimRouteTestCase extends PHPUnit_Framework_TestCase {
+class SlimRouteTestCase extends \PHPUnit_Framework_TestCase {
 
   /**
    * @param Slim $app Slim context
